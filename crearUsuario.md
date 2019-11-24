@@ -12,6 +12,11 @@ CREAR USUARIO Y DAR PRIVILEGIOS
 ```sql
 CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'contraseña';
 GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+-- Si se quiere conexion remota hay que poner la ip o % para todos los ips
+-- Para conexion remota configurar el archivo comentando la linea 
+-- bind-address = 127.0.0.1
+-- /etc/mysql/mariadb.conf.d/50-server.cnf
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 usar la base de datos 
